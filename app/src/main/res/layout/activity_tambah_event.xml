@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bc"
+    tools:context=".TambahEvent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/txtuser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Tambah Event"
+                android:textColor="@color/White"
+                android:textSize="27sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/shapeform">
+
+            <EditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/White"
+                android:hint="Judul"
+                android:inputType="textEmailAddress" />
+
+            <LinearLayout
+                android:id="@+id/llStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etTitle"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    style="@style/Base.Widget.AppCompat.ImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:onClick="showDateStart"
+                    android:contentDescription="@string/date_start"
+                    android:src="@drawable/ic_baseline_date_range" />
+
+                <EditText
+                    android:id="@+id/etStartDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:background="@null"
+                    android:textColor="@android:color/black"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Waktu mulai"
+                    android:inputType="text|textNoSuggestions" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llStart"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    style="@style/Base.Widget.AppCompat.ImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:onClick="showDateEnd"
+                    android:contentDescription="@string/date_start"
+                    android:src="@drawable/ic_baseline_date_range" />
+
+                <EditText
+                    android:id="@+id/etEndDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:background="@null"
+                    android:textColor="@android:color/black"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Waktu selesai"
+                    android:inputType="text|textNoSuggestions" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llEnd"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/White"
+                android:hint="Tempat"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/etDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etLocation"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/White"
+                android:hint="Deskripsi"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/etNotif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/etDesc"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/White"
+                android:hint="Alarm notifikasi (berapa menit sebelum)"
+                android:inputType="number" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round"
+            android:text="Save"
+            android:textColor="@color/White"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

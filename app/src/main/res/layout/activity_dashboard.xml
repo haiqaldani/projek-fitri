@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bc"
+        tools:context=".dashboard">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:layout_marginTop="90dp"
+                    android:id="@+id/txtdashboard"
+                    android:text="Dashboard"
+                    android:textSize="27sp"
+                    android:textColor="@color/White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/txtuser"
+                    android:text="Dosen"
+                    android:textSize="17sp"
+                    android:textColor="@color/White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/txtemail"
+                    android:text="dosen@pcr.ac.id"
+                    android:textSize="8sp"
+                    android:textColor="@color/White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <ImageView
+                    android:layout_marginLeft="170dp"
+                    android:src="@drawable/user"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"/>
+
+        </RelativeLayout>
+
+        <GridLayout
+                android:columnCount="2"
+                android:rowCount="3"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <!--Kolom 1 Baris 1-->
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/berita"
+                    android:layout_marginTop="30dp"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:src="@drawable/news"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"/>
+
+                    <TextView
+                            android:text="Berita"
+                            android:textColor="@color/BlueViolet"
+                            android:textSize="18sp"
+                            android:layout_marginTop="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--Kolom 1 Baris 2-->
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/kuliah"
+                    android:layout_marginTop="30dp"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:src="@drawable/requirement"
+                            android:layout_marginLeft="9dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"/>
+
+                    <TextView
+                            android:text="Jadwal Kuliah"
+                            android:textColor="@color/BlueViolet"
+                            android:textSize="14sp"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--Kolom 2 Baris 1-->
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/ganti"
+                    android:layout_marginTop="50dp"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:src="@drawable/requirement1"
+                            android:layout_marginLeft="9dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"/>
+
+                    <TextView
+                            android:text="Jadwal Ganti"
+                            android:textColor="@color/BlueViolet"
+                            android:textSize="14sp"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--Kolom 2 Baris 2-->
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/kalender"
+                    android:layout_marginTop="50dp"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:src="@drawable/calendar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"/>
+
+                    <TextView
+                            android:text="Kalender"
+                            android:textColor="@color/BlueViolet"
+                            android:textSize="18sp"
+                            android:layout_marginTop="12dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

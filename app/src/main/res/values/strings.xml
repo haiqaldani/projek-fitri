@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Projekku</string>
+    <string name="berita">Berita</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_plan">Tidak ada rencana kegiatan.</string>
+    <string name="date_start">Date Start</string>
+</resources>
