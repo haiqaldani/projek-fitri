@@ -19,7 +19,7 @@
         android:textSize="27sp" />
 
     <HorizontalScrollView
-        android:id="@+id/hhScroll"
+        android:id="@+id/hhAccSchedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/txtLihat"
@@ -30,6 +30,25 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvJadwalGanti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/table_list_item" />
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/hhNewSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtLihat"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false"

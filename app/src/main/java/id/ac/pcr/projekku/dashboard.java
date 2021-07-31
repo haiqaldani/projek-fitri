@@ -33,8 +33,6 @@ public class dashboard extends AppCompatActivity {
 
         ganti = (CardView) findViewById(R.id.ganti);
 
-        initView();
-
         ibLogout = (ImageButton) findViewById(R.id.ibLogout);
         ibLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,14 +87,6 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
-    }
-
-    private void initView() {
-        if (sharedPrefManager.getSPLevel().equals("Mahasiswa")) {
-            ganti.setVisibility(View.GONE);
-        } else {
-            ganti.setVisibility(View.VISIBLE);
-        }
     }
 
     public void vBerita(){

@@ -55,4 +55,7 @@ public interface APIRequestData {
 
     @GET("accschedule.php")
     Call<ScheduleModel> getAccSchedule(@Query("id_dosen") String id_dosen);
+
+    @GET("newschedule.php")
+    Call<ScheduleModel> getNewSchedule();
 }
