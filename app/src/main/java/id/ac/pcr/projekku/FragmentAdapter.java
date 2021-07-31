@@ -19,6 +19,8 @@ public class FragmentAdapter extends FragmentStateAdapter {
         {
             case 1 :
                 return new SelasaFragment();
+            case 2 :
+                return new RabuFragment();
         }
 
         return new SeninFragment();

@@ -1,63 +1,85 @@
 package id.ac.pcr.projekku;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SelasaFragment#newInstance} factory method to
- * create an instance of this fragment.
- *
- */
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import id.ac.pcr.projekku.adapter.ScheduleAdapter;
+import id.ac.pcr.projekku.api.APIRequestData;
+import id.ac.pcr.projekku.api.RetroServer;
+import id.ac.pcr.projekku.databinding.FragmentSelasaBinding;
+import id.ac.pcr.projekku.model.ScheduleModel;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class SelasaFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SelasaFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SelasaFragment newInstance(String param1, String param2) {
-        SelasaFragment fragment = new SelasaFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    public SelasaFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private FragmentSelasaBinding binding;
+    private ScheduleAdapter scheduleAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_selasa, container, false);
+        binding = FragmentSelasaBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        setupList();
+        getScheduleData();
+
+        binding.fabRefresh.setOnClickListener( v-> {
+            getScheduleData();
+        });
+    }
+
+    private void setupList() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        binding.rvSelasa.setLayoutManager(linearLayoutManager);
+        scheduleAdapter = new ScheduleAdapter(getContext(), new ArrayList());
+        binding.rvSelasa.setAdapter(scheduleAdapter);
+    }
+
+    private void getScheduleData() {
+        binding.loading.setVisibility(View.VISIBLE);
+
+        APIRequestData apiRequestData = RetroServer.konekRetrofit().create(APIRequestData.class);
+        Call<ScheduleModel> call = apiRequestData.getSchedule("SELASA");
+        call.enqueue(new Callback<ScheduleModel>() {
+            @Override
+            public void onResponse(@NotNull Call<ScheduleModel> call, @NotNull Response<ScheduleModel> response) {
+                if (response.body() != null) {
+                    binding.loading.setVisibility(View.GONE);
+                    List<ScheduleModel.College> collegeList = response.body().getJadwalkuliah();
+                    scheduleAdapter.setData(collegeList);
+                }
+            }
+
+            @Override
+            public void onFailure(@NotNull Call<ScheduleModel> call, @NotNull Throwable t) {
+                binding.loading.setVisibility(View.GONE);
+                Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

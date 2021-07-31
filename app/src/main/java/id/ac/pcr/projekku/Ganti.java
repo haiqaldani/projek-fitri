@@ -36,7 +36,7 @@ public class Ganti extends AppCompatActivity {
     }
 
     public void vTambah(){
-        Intent intent = new Intent(this, Tambah_Ganti.class);
+        Intent intent = new Intent(this, JadwalDosen.class);
         startActivity(intent);
     }
 

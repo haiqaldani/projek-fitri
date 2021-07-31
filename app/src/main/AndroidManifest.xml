@@ -18,15 +18,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".TambahEvent"></activity>
-        <activity android:name=".dashboard">
+        <activity android:name=".JadwalDosen"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".TambahEvent" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".dashboard" />
         <activity android:name=".Berita" />
         <activity android:name=".Kuliah" />
         <activity android:name=".Ganti" />

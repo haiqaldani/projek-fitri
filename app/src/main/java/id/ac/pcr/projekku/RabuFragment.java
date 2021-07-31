@@ -17,22 +17,20 @@ import java.util.List;
 import id.ac.pcr.projekku.adapter.ScheduleAdapter;
 import id.ac.pcr.projekku.api.APIRequestData;
 import id.ac.pcr.projekku.api.RetroServer;
-import id.ac.pcr.projekku.databinding.FragmentSeninBinding;
+import id.ac.pcr.projekku.databinding.FragmentRabuBinding;
 import id.ac.pcr.projekku.model.ScheduleModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SeninFragment extends Fragment {
+public class RabuFragment extends Fragment {
 
-    private FragmentSeninBinding binding;
+    private FragmentRabuBinding binding;
     private ScheduleAdapter scheduleAdapter;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        binding = FragmentSeninBinding.inflate(inflater, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = FragmentRabuBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         return view;
     }
@@ -51,16 +49,16 @@ public class SeninFragment extends Fragment {
 
     private void setupList() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        binding.rvSenin.setLayoutManager(linearLayoutManager);
+        binding.rvRabu.setLayoutManager(linearLayoutManager);
         scheduleAdapter = new ScheduleAdapter(getContext(), new ArrayList());
-        binding.rvSenin.setAdapter(scheduleAdapter);
+        binding.rvRabu.setAdapter(scheduleAdapter);
     }
 
     private void getScheduleData() {
         binding.loading.setVisibility(View.VISIBLE);
 
         APIRequestData apiRequestData = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ScheduleModel> call = apiRequestData.getSchedule("SENIN");
+        Call<ScheduleModel> call = apiRequestData.getSchedule("RABU");
         call.enqueue(new Callback<ScheduleModel>() {
             @Override
             public void onResponse(@NotNull Call<ScheduleModel> call, @NotNull Response<ScheduleModel> response) {

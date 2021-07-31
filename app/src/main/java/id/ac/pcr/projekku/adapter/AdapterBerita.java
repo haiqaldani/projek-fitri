@@ -14,6 +14,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 import id.ac.pcr.projekku.R;
 import id.ac.pcr.projekku.model.BeritaModel;
+import id.ac.pcr.projekku.model.ScheduleModel;
 
 public class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.HolderBerita>{
     private Context ctx;
@@ -61,26 +62,4 @@ public class AdapterBerita extends RecyclerView.Adapter<AdapterBerita.HolderBeri
         }
     }
 
-//    @NonNull
-//    @Override
-//    public HolderBerita onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-//
-//        View view  = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.berita_adapter,null);
-//        return new HolderBerita(view);
-//    }
-
-//    @Override
-//    public void onBindViewHolder(@NonNull HolderBerita holder, int i) {
-//
-//        holder.mNama.setText(models.get(i).getNama());
-//        holder.mSubjek.setText(models.get(i).getSubjek());
-//        holder.mIsi.setText(models.get(i).getIsi());
-//        holder.mfoto.setImageResource(models.get(i).getFoto());
-//
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return models.size();
-//    }
 }

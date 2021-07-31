@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bc"
-    tools:context=".Lihat_Ganti">
+    tools:context=".JadwalDosen">
 
     <TextView
-        android:id="@+id/txtLihat"
+        android:id="@+id/txtKuliah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="16dp"
-        android:text="Jadwal Ganti"
+        android:text="Jadwal Mengajar"
         android:textColor="@color/White"
         android:textSize="27sp" />
 
@@ -22,14 +22,14 @@
         android:id="@+id/hhScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtLihat"
+        android:layout_below="@id/txtKuliah"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvJadwalGanti"
+            android:id="@+id/rvDosen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false"
@@ -37,11 +37,47 @@
 
     </HorizontalScrollView>
 
+    <TextView
+        android:id="@+id/tvGanti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hhScroll"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:text="Ganti Jadwal dengan ID : "
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hhScroll"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_toRightOf="@id/tvGanti"
+        android:background="@color/Ivory">
+
+        <Spinner
+            android:id="@+id/spinnerId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
     <ProgressBar
         android:id="@+id/loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:text="Ganti jadwal"
+        android:textColor="@color/White"/>
 
 </RelativeLayout>

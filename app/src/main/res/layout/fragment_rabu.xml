@@ -4,38 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bc"
-    tools:context=".Lihat_Ganti">
-
-    <TextView
-        android:id="@+id/txtLihat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="16dp"
-        android:text="Jadwal Ganti"
-        android:textColor="@color/White"
-        android:textSize="27sp" />
+    tools:context=".RabuFragment">
 
     <HorizontalScrollView
-        android:id="@+id/hhScroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtLihat"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvJadwalGanti"
+            android:id="@+id/rvRabu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false"
             tools:listitem="@layout/table_list_item" />
 
     </HorizontalScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_refresh" />
 
     <ProgressBar
         android:id="@+id/loading"
